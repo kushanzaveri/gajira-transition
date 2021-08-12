@@ -48,6 +48,11 @@ module.exports = class {
       payload = {...payload, fields: fields}
     }
 
+    if (argv.update) {
+      const update = JSON.parse(argv.update)
+      payload = {...payload, update: update}
+    }
+
     await this.Jira.transitionIssue(issueId, payload)
 
     const transitionedIssue = await this.Jira.getIssue(issueId)

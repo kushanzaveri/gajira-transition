@@ -14,7 +14,10 @@ inputs:
     description: The id of a transition to apply to the issue
     required: false
   fields:
-    description: Additional issue screen fields in JSON format to update
+    description: Additional issue screen fields to update, in JSON format
+    required: false
+  update:
+    description: Additional operations to perform on issue screen field, in JSON format
     required: false
 runs:
   using: 'node12'
