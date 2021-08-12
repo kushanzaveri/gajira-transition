@@ -13,6 +13,9 @@ inputs:
   transitionId:
     description: The id of a transition to apply to the issue
     required: false
+  fields:
+    description: Additional issue screen fields in JSON format to update
+    required: false
 runs:
   using: 'node12'
   main: './dist/index.js'

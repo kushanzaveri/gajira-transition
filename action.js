@@ -37,11 +37,18 @@ module.exports = class {
 
     console.log(`Selected transition:${JSON.stringify(transitionToApply, null, 4)}`)
 
-    await this.Jira.transitionIssue(issueId, {
+    let payload = {
       transition: {
         id: transitionToApply.id,
       },
-    })
+    }
+
+    if (argv.fields) {
+      fields = JSON.parse(argv.fields)
+      payload = {...payload, fields: fields}
+    }
+
+    await this.Jira.transitionIssue(issueId, payload)
 
     const transitionedIssue = await this.Jira.getIssue(issueId)
 

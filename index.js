@@ -46,6 +46,7 @@ function parseArgs () {
     issue: core.getInput('issue'),
     transition,
     transitionId,
+    fields: core.getInput('fields')
   }
 }
 
