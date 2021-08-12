@@ -44,7 +44,7 @@ module.exports = class {
     }
 
     if (argv.fields) {
-      fields = JSON.parse(argv.fields)
+      const fields = JSON.parse(argv.fields)
       payload = {...payload, fields: fields}
     }
 
